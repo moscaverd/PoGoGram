@@ -1,0 +1,30 @@
+{
+  "name": "pogobot",
+  "version": "1.0.0",
+  "description": "Pokémon Go integration with Telegram Bot",
+  "main": "pogobot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gleuck/PoGoBot.git"
+  },
+  "keywords": [
+    "pokemon",
+    "pokemongo",
+    "telegram",
+    "bot"
+  ],
+  "author": "Gustavo Leuck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gleuck/PoGoBot/issues"
+  },
+  "homepage": "https://github.com/gleuck/PoGoBot#readme",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.23.3",
+    "pokespotter": "^0.1.5",
+    "request": "^2.74.0"
+  }
+}
