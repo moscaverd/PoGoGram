@@ -18,7 +18,7 @@ bot.on('message', (msg) => {
   var user;
 
   users.forEach((u) => {
-    if (u.id = msg.from.id) {
+    if (u.id == msg.from.id) {
       user = u;
     }
   });
@@ -35,7 +35,7 @@ bot.on('message', (msg) => {
 
   if (msg.location) {
     users.forEach((u) => {
-      if (u.id = user.id) {
+      if (u.id == user.id) {
         u.location = msg.location;
       }
     });
