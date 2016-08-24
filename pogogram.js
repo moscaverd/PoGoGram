@@ -34,8 +34,8 @@ bot.on('message', (msg) => {
       id: msg.from.id,
       firstName: msg.from.first_name,
       lastName: msg.from.last_name,
-      location: msg.location
-      nRequests: 0
+      location: msg.location,
+      nRequests: 1
     }
     users.push(user);
   }
@@ -126,7 +126,7 @@ bot.on('message', (msg) => {
           + 'Usuários cadastrados: ' + users.length + '\n';
         users.forEach((u, i) => {
           status = status + (i + 1) + ': ' + u.id + ' - '
-            + u.firstName + ' ' + u.lastName + '(' + 'Reqs: ' + u.nRequests
+            + u.firstName + ' ' + u.lastName + ' (' + 'Reqs: ' + u.nRequests
             + ')' + '\n';
         });
         bot.sendMessage(msg.from.id, status);
