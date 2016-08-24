@@ -9,6 +9,7 @@ var telegramToken = process.env.PGO_TELEGRAM_TOKEN || '';
 var stepsInEachDirection = 2;
 var users = [];
 
+
 // Log to Telegram API with token (env PGO_TELEGRAM_TOKEN)
 var bot = new Telegram(telegramToken, {polling: true});
 
@@ -17,39 +18,47 @@ bot.on('message', (msg) => {
 
   var user;
 
+  // Are you returning? (Existing user)
   users.forEach((u) => {
     if (u.id == msg.from.id) {
+      u.nRequests++;
       user = u;
     }
   });
 
+  // New user!
   if (!user) {
     user = {
       id: msg.from.id,
       firstName: msg.from.first_name,
       lastName: msg.from.last_name,
       location: msg.location
+      nRequests: 0
     }
     users.push(user);
   }
 
+  // Location received
   if (msg.location) {
     users.forEach((u) => {
       if (u.id == user.id) {
         u.location = msg.location;
       }
     });
-    bot.sendMessage(msg.from.id,
-      'Agora eu sei onde você está. Use /temosquepegar para buscar Pokémons!');
+    bot.sendMessage(msg.from.id, 'Agora eu sei onde você está. \
+      Use /temosquepegar para buscar Pokémons!');
   } else {
+    // Any other message type
     switch (msg.text) {
       case '/temosquepegar':
+        // Need the user's location to continue
         if (!user.location) {
-          bot.sendMessage(msg.from.id,
-            'Não sei onde você está. Compartilhe a sua localização comigo');
+          bot.sendMessage(msg.from.id, 'Não sei onde você está. Compartilhe a \
+            sua localização comigo');
         } else {
           bot.sendMessage(msg.from.id,
-            'Espere um pouco. Estou correndo atrás de Pokémons para você!');
+            'Espere um pouco. Estou correndo atrás de Pokémons para você! \
+            Estou usando a última localização que você enviou');
 
           // Logon to Pokémon GO API
           var Pokespotter = pokespotter(username, password, provider);
@@ -94,24 +103,29 @@ bot.on('message', (msg) => {
                 bot.sendMessage(msg.from.id, pokemonsString);
               });
             } else {
+              // No Pokémon found :-(
               bot.sendMessage(msg.from.id, 'Nenhum pokémon encontrado');
             }
 
           }).catch((err) => {
+            // The bot has stoped. Maybe he just needs some oil :-)
             bot.sendMessage(msg.from.id, 'Deu xabú!');
             console.error(err);
           });
         }
         break;
       case '/start':
-        bot.sendMessage(msg.from.id,
-          'Compartilhe a sua localização comigo para começar');
+        // Greetings message
+        bot.sendMessage(msg.from.id, 'Compartilhe a sua localização comigo \
+          para começar');
         break;
       case '/status':
-        var status = 'Usuários cadastrados: ' + users.length + '\n';
+        var status = 'Online desde: ' + onlineDate + '\n'
+          + 'Usuários cadastrados: ' + users.length + '\n';
         users.forEach((u, i) => {
           status = status + (i + 1) + ': ' + u.id + ' - '
-            + u.firstName + ' ' + u.lastName + '\n';
+            + u.firstName + ' ' + u.lastName + '(' + 'Reqs: ' + u.nRequests
+            + ')' + '\n';
         });
         bot.sendMessage(msg.from.id, status);
         break;
