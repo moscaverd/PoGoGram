@@ -9,6 +9,8 @@ var telegramToken = process.env.PGO_TELEGRAM_TOKEN || '';
 var stepsInEachDirection = 2;
 var users = [];
 
+// Keep the date the service started
+const onlineDate = new Date(Date.now());
 
 // Log to Telegram API with token (env PGO_TELEGRAM_TOKEN)
 var bot = new Telegram(telegramToken, {polling: true});
@@ -69,10 +71,10 @@ bot.on('message', (msg) => {
             steps: stepsInEachDirection,
             requestDelay: 0
           }).then((pokemon) => {
-
             if (pokemon.length > 0) {
               var pokemonsString = '';
               var idx = 1;
+
               pokemon.forEach((p) => {
                 var remainingTime = new Date(p.expirationTime - Date.now());
                 var remainingMin = remainingTime.getMinutes();
