@@ -1,5 +1,5 @@
 # PoGoGram
-Pokémon Go integration with Telegram Bot. With this simples app, you can setup a Telegram bot that searches for Pokémons in a given area.
+With this simples app you can setup a Telegram bot that searches for Pokémons in a given area.
 
 # Requirements
 ## Telegram bot
