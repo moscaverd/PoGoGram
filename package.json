@@ -1,6 +1,6 @@
 {
   "name": "pogogram",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Pokémon Go integration with Telegram Bot. Create a bot to search for Pokémons!",
   "keywords": "pokemon go telegram bot search",
   "main": "pogogram.js",
