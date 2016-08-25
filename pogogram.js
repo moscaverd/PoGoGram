@@ -36,7 +36,7 @@ bot.on('message', (msg) => {
       lastName: msg.from.last_name,
       location: msg.location,
       nRequests: 1
-    }
+    };
     users.push(user);
   }
 
