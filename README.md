@@ -32,7 +32,7 @@ Then, in Telegram, just talk with your bot. You will need to set the commands in
 I know commands are hardcoded, and that's why we are in v0.0.1. Also, all texts are in portuguese if you're wondering what language is that. :-)
 
 # Disclaimer
-The app uses a unofficial Pokémon Go API. The account used might be blocked. Do not use you personal account!
+The app uses an unofficial Pokémon Go API. The account used might be blocked. Do not use you personal account!
 
 # Acknowledgment
 This is built upon the work of others. Let's give a round of applause to [yagop](https://github.com/yagop) for the excelent [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api), and [brentschooley](https://github.com/brentschooley) that created [pokespotter](https://github.com/brentschooley/pokespotter).
