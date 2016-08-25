@@ -29,7 +29,7 @@ I'll make it short.
 
 Then, in Telegram, just talk with your bot. You will need to set the commands in Telegram too. Just talk to BotFather.
 
-I know commands are hardcoded, and that's why we are in v0.0.1. Also, all texts are in portuguese if you're wondering what language is that. :-)
+I know commands are hardcoded, and that's why we are in alpha. Also, all texts are in portuguese if you're wondering what language is that. :-)
 
 # Disclaimer
 The app uses an unofficial Pokémon Go API. The account used might be blocked. Do not use you personal account!
