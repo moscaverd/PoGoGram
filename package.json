@@ -11,9 +11,6 @@
   "engines": {
     "node": "^4.5.0"
   },
-  "author": {
-    "name": "Gustavo Leuck"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gleuck/PoGoGram.git"
@@ -24,7 +21,9 @@
     "telegram",
     "bot"
   ],
-  "author": "Gustavo Leuck",
+  "author": {
+    "name": "Gustavo Leuck"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gleuck/PoGoGram/issues"
