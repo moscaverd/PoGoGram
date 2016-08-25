@@ -1,8 +1,13 @@
 {
   "name": "pogogram",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Pokémon Go integration with Telegram Bot. Create a bot to search for Pokémons!",
-  "keywords": "pokemon go telegram bot search",
+  "keywords": [
+    "pokemon",
+    "pokemongo",
+    "telegram",
+    "bot"
+  ],
   "main": "pogogram.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,12 +20,6 @@
     "type": "git",
     "url": "git+https://github.com/gleuck/PoGoGram.git"
   },
-  "keywords": [
-    "pokemon",
-    "pokemongo",
-    "telegram",
-    "bot"
-  ],
   "author": {
     "name": "Gustavo Leuck"
   },
