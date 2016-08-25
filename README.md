@@ -12,7 +12,7 @@ To install PoGoGram locally, just run `npm install pogogram`.
 
 Or, install it globally: `npm install -g pogogram`
 
-## Enviromental Variables
+## Environment Variables
 You must set the following ENV_VARS to use the app.
 
 | Variable | Description |
